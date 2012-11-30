@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include <linux/i2c-dev.h>
 
-#include "../raspy-juice-read-only/firmware/juice.h"
+#include "juice.h"
 
 #define I2C_NUM_RETRIES	3
 #define RETRY_TIMEOUT	20000

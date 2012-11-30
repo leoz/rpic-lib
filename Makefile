@@ -1,15 +1,34 @@
 ###############################################################################
-# Makefile for the rpic-lib
+#  Copyright (C) 2012 Leonid Zolotarev
+#
+#  Licensed under the terms of the BSD license, see file COPYING
+#  for details.
+#
+#  Raspberry Pi Car Library
+#
+#  Makefile for the rpic-lib
+#
+#  $Id$
 ###############################################################################
+
+uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
+
+###############################################################################
+
 CC=gcc
 CFLAGS=-fPIC -c -Wall
 LDFLAGS=-shared
 
-SOURCES=rpic-lib.c lib-juice.c
+ifeq ($(uname_M),armv6l)
+    SOURCES=rpic-lib.c juice/lib-juice.c
+    librpic_objects= rpic-lib.o juice/lib-juice.o
+else
+    SOURCES=rpic-lib.c
+    librpic_objects= rpic-lib.o
+endif
+
 OBJECTS=$(SOURCES:.cpp=.o)
 TARGETS=librpic.so
-
-librpic_objects= rpic-lib.o lib-juice.o
 
 all: $(SOURCES) $(TARGETS)
 
@@ -20,4 +39,15 @@ librpic.so: $(librpic_objects)
 	$(CC) $(CFLAGS) $< -o $@
 
 clean:
-	rm -f *.so* *.o *~
+	rm -f *.o *~ *.so*
+	rm -f juice/*.o juice/*~
+
+###############################################################################
+
+.PHONY: print_vars
+
+print_vars:
+	echo $(uname_M)
+
+###############################################################################
+

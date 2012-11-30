@@ -1,7 +1,7 @@
 #ifndef __JUICE_DEV_H__
 #define __JUICE_DEV_H__
 
-#include "../raspy-juice-read-only/firmware/juice.h"
+#include "juice.h"
 
 #define BUFSIZE 64
 char version_str[BUFSIZE];

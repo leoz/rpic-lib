@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <unistd.h>
+#include <string.h>
 
 #include "rpic-lib.h"
 
@@ -20,8 +21,9 @@
 
 #elif defined(__arm__)
 
-#include "juice-dev.h"
-#include "../raspy-juice-read-only/firmware/juice.h"
+
+#include "juice/juice-dev.h"
+#include "juice/juice.h"
 
 #else
 #error Architecture is not supported
