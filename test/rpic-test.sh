@@ -1,4 +1,2 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=..
-./rpic-test
-
+export LD_LIBRARY_PATH =... / rpic - test

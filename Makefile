@@ -1,53 +1,32 @@
 ###############################################################################
-#  Copyright (C) 2012 Leonid Zolotarev
+#Copyright (C) 2012 Leonid Zolotarev
 #
-#  Licensed under the terms of the BSD license, see file COPYING
-#  for details.
+#Licensed under the terms of the BSD license, see file COPYING
+#for details.
 #
-#  Raspberry Pi Car Library
+#Raspberry Pi Car Library
 #
-#  Makefile for the rpic-lib
+#Makefile for the rpic-lib
 #
-#  $Id$
+#$Id:$
 ###############################################################################
 
-uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
-
+uname_M:= $ (shell sh - c 'uname -m 2>/dev/null || echo not')
 ###############################################################################
-
-CC=gcc
-CFLAGS=-fPIC -c -Wall
-LDFLAGS=-shared
-
-ifeq ($(uname_M),armv6l)
-    SOURCES=rpic-lib.c juice/lib-juice.c
-    librpic_objects= rpic-lib.o juice/lib-juice.o
+  CC = gcc CFLAGS = -fPIC - c - Wall LDFLAGS = -shared
+ifeq ($ (uname_M), armv6l)
+  SOURCES = rpic - lib.c juice / lib - juice.c
+  librpic_objects = rpic - lib.o juice / lib - juice.o
 else
-    SOURCES=rpic-lib.c
-    librpic_objects= rpic-lib.o
-endif
+SOURCES = rpic - lib.c librpic_objects = rpic - lib.o endif OBJECTS = $ (SOURCES: .cpp =.o) TARGETS = librpic.so all: $ (SOURCES) $ (TARGETS) librpic.so: $ (librpic_objects) $ (CC) $ (LDFLAGS) $ (librpic_objects) - o $ @.cpp.o:
+$ (CC) $ (CFLAGS) $ < -o $ @ clean:
+rm - f *.o * ~*.so * rm - f juice	/*.o juice/*~
 
-OBJECTS=$(SOURCES:.cpp=.o)
-TARGETS=librpic.so
+					   ###############################################################################
 
-all: $(SOURCES) $(TARGETS)
+					   .PHONY: print_vars
 
-librpic.so: $(librpic_objects)
-	$(CC) $(LDFLAGS) $(librpic_objects) -o $@
+					   print_vars:
+					   echo $(uname_M)
 
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
-
-clean:
-	rm -f *.o *~ *.so*
-	rm -f juice/*.o juice/*~
-
-###############################################################################
-
-.PHONY: print_vars
-
-print_vars:
-	echo $(uname_M)
-
-###############################################################################
-
+					   ###############################################################################
