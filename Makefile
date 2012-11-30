@@ -8,7 +8,6 @@
 #
 #  Makefile for the rpic-lib
 #
-#  $Id$
 ###############################################################################
 
 uname_M := $(shell sh -c 'uname -m 2>/dev/null || echo not')
