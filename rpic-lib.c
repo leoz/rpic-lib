@@ -15,7 +15,7 @@
 
 #define AVRSLAVE_ADDR 0
 
-#define rj_setservo(a,b) 
+#define rj_setservo(a,b)
 #define rj_open(a,b) 0
 #define rj_getversion() "VOID"
 
@@ -35,8 +35,7 @@
 
 void rpi_car_forward()
 {
-	printf("### RPi Car Forward ###\n");
-	
+    printf("### RPi Car Forward ###\n");
     rj_setservo(SERVO_0, RPI_CAR_VAL_FORWARD);
     rj_setservo(SERVO_1, RPI_CAR_VAL_BACKWARD);
     rj_setservo(SERVO_2, RPI_CAR_VAL_FORWARD);
@@ -45,8 +44,7 @@ void rpi_car_forward()
 
 void rpi_car_backward()
 {
-	printf("### RPi Car Backward ###\n");
-	
+    printf("### RPi Car Backward ###\n");
     rj_setservo(SERVO_0, RPI_CAR_VAL_BACKWARD);
     rj_setservo(SERVO_1, RPI_CAR_VAL_FORWARD);
     rj_setservo(SERVO_2, RPI_CAR_VAL_BACKWARD);
@@ -55,8 +53,7 @@ void rpi_car_backward()
 
 void rpi_car_stop()
 {
-	printf("### RPi Car Stop ###\n");
-	
+    printf("### RPi Car Stop ###\n");
     rj_setservo(SERVO_0, RPI_CAR_VAL_STOP);
     rj_setservo(SERVO_1, RPI_CAR_VAL_STOP);
     rj_setservo(SERVO_2, RPI_CAR_VAL_STOP);
@@ -65,31 +62,34 @@ void rpi_car_stop()
 
 void rpi_car_left()
 {
-	printf("### RPi Car Left Turn ###\n");
-	
-    rj_setservo(SERVO_0, RPI_CAR_VAL_FORWARD);
-    rj_setservo(SERVO_1, RPI_CAR_VAL_STOP);
-    rj_setservo(SERVO_2, RPI_CAR_VAL_STOP);
-    rj_setservo(SERVO_3, RPI_CAR_VAL_FORWARD);
+    printf("### RPi Car Left Turn ###\n");
+    rj_setservo(SERVO_0, RPI_CAR_VAL_BACKWARD);
+    rj_setservo(SERVO_1, RPI_CAR_VAL_FORWARD);
+    rj_setservo(SERVO_2, RPI_CAR_VAL_FORWARD);
+    rj_setservo(SERVO_3, RPI_CAR_VAL_BACKWARD);
 }
 
 void rpi_car_right()
 {
-	printf("### RPi Car Right Turn ###\n");
+    printf("### RPi Car Right Turn ###\n");
+    rj_setservo(SERVO_0, RPI_CAR_VAL_FORWARD);
+    rj_setservo(SERVO_1, RPI_CAR_VAL_BACKWARD);
+    rj_setservo(SERVO_2, RPI_CAR_VAL_BACKWARD);
+    rj_setservo(SERVO_3, RPI_CAR_VAL_FORWARD);
 }
 
 
 void rpi_car_deccelerate()
 {
-	printf("### RPi Car Deccelerate ###\n");
+    printf("### RPi Car Deccelerate ###\n");
 }
 
 void rpi_car_accelerate()
 {
-	printf("### RPi Car Accelerate ###\n");
+    printf("### RPi Car Accelerate ###\n");
 }
 
-#define RPI_CAR_DEV_NAME "/dev/i2c-0"
+#define RPI_CAR_DEV_NAME "/dev/i2c-1"
 
 int rpi_car_dev_open()
 {
@@ -100,7 +100,7 @@ int rpi_car_dev_open()
 
 void rpi_car_dev_close(int dev)
 {
-	close (dev);
+    close (dev);
 }
 
 char* rpi_car_dev_version()
