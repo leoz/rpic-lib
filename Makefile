@@ -1,5 +1,5 @@
 ###############################################################################
-#  Copyright (C) 2012 - 2013 Leonid Zolotarev
+#  Copyright (C) 2012 - 2013, Leonid Zolotarev
 #
 #  Licensed under the terms of the BSD license, see file COPYING
 #  for details.

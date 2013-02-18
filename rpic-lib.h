@@ -1,3 +1,15 @@
+/******************************************************************************
+ *  Copyright (C) 2012 - 2013, Leonid Zolotarev
+ *
+ *  Licensed under the terms of the BSD license, see file COPYING
+ *  for details.
+ *
+ *  Raspberry Pi Car Library
+ *
+ *  Header file for the rpic-lib
+ *
+ *****************************************************************************/
+
 #ifndef __RPIC_LIB_H__
 #define __RPIC_LIB_H__
 
