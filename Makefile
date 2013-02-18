@@ -1,5 +1,5 @@
 ###############################################################################
-#  Copyright (C) 2012 Leonid Zolotarev
+#  Copyright (C) 2012 - 2013 Leonid Zolotarev
 #
 #  Licensed under the terms of the BSD license, see file COPYING
 #  for details.
@@ -40,6 +40,7 @@ librpic.so: $(librpic_objects)
 clean:
 	rm -f *.o *~ *.so*
 	rm -f juice/*.o juice/*~
+	rm -f test/*.o test/*~ test/rpic-test
 
 ###############################################################################
 
