@@ -14,8 +14,10 @@
 #define __RPIC_LIB_H__
 
 #define RPI_CAR_VAL_STOP     1500
-#define RPI_CAR_VAL_FORWARD  1700
-#define RPI_CAR_VAL_BACKWARD 1300
+#define RPI_CAR_VAL_FWD_FAST 1700
+#define RPI_CAR_VAL_BWD_FAST 1300
+#define RPI_CAR_VAL_FORWARD  1600
+#define RPI_CAR_VAL_BACKWARD 1400
 
 void rpi_car_forward();
 void rpi_car_backward();

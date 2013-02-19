@@ -75,19 +75,19 @@ void rpi_car_stop()
 void rpi_car_left()
 {
     printf("### RPi Car Left Turn ###\n");
-    rj_setservo(SERVO_0, RPI_CAR_VAL_BACKWARD);
-    rj_setservo(SERVO_1, RPI_CAR_VAL_FORWARD);
-    rj_setservo(SERVO_2, RPI_CAR_VAL_FORWARD);
-    rj_setservo(SERVO_3, RPI_CAR_VAL_BACKWARD);
+    rj_setservo(SERVO_0, RPI_CAR_VAL_BWD_FAST);
+    rj_setservo(SERVO_1, RPI_CAR_VAL_FWD_FAST);
+    rj_setservo(SERVO_2, RPI_CAR_VAL_FWD_FAST);
+    rj_setservo(SERVO_3, RPI_CAR_VAL_BWD_FAST);
 }
 
 void rpi_car_right()
 {
     printf("### RPi Car Right Turn ###\n");
-    rj_setservo(SERVO_0, RPI_CAR_VAL_FORWARD);
-    rj_setservo(SERVO_1, RPI_CAR_VAL_BACKWARD);
-    rj_setservo(SERVO_2, RPI_CAR_VAL_BACKWARD);
-    rj_setservo(SERVO_3, RPI_CAR_VAL_FORWARD);
+    rj_setservo(SERVO_0, RPI_CAR_VAL_FWD_FAST);
+    rj_setservo(SERVO_1, RPI_CAR_VAL_BWD_FAST);
+    rj_setservo(SERVO_2, RPI_CAR_VAL_BWD_FAST);
+    rj_setservo(SERVO_3, RPI_CAR_VAL_FWD_FAST);
 }
 
 
